@@ -1,36 +1,33 @@
 module.exports =  {
+
   menuConfig: [
     {
-      key: 'sub1',
+      key: 'm0',
+      title: '这是首页面',
+      children: [
+        { title: '首页概述', key: '/' },
+      ]
+    },
+    {
+      key: 'm1',
       title: 'HTML相关',
       children: [
-        { title: '基础概念', key: '1', path: '/' },
-        { title: '面试相关', key: '2', path: '/' },
+        { title: '面试相关', key: '/html' },
       ]
     },
     {
-      key: 'sub2',
+      key: 'm2',
       title: 'CSS相关',
       children: [
-        { title: '基础概念', key: '3', path: '/css' },
-        { title: '面试相关', key: '4', path: '/' },
+        { title: '基础概念', key: '/css' },
       ]
     },
     {
-      key: 'sub3',
+      key: 'm3',
       title: 'JS相关',
       children: [
-        { title: '基础概念', key: '5', path: '/' },
-        { title: '面试相关', key: '6', path: '/' },
+        { title: '基础概念', key: '/es' },
       ]
     },
-    {
-      key: 'sub4',
-      title: 'Webpack相关',
-      children: [
-        { title: '基础概念', key: '7', path: '/' },
-        { title: '面试相关', key: '8', path: '/' },
-      ]
-    },
-  ]
+  ],
 }

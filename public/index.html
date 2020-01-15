@@ -7,9 +7,8 @@
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
-      content="Web site created using create-react-app"
+      content="前端知识记录个人博客"
     />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
@@ -24,11 +23,40 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <title>Stylish WebSite</title>
+    <style>
+      html,body,#root {
+        width: 100%;
+        height: 100%;
+      }
+      .loader-box {
+        width: 100%;
+        height: 100%;
+        color: #0ae;
+        font-size: 14px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .loader-box div:before {
+        content: '';
+        margin-bottom: 10px;
+        display: block;
+        width: 264px;
+        height: 204px;
+        background: url('https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1579066369424&di=42f17f5f3049c52e0809fca44ae7b26f&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2F26e4973a351b57767a14a054904e88b17834c76e14286-JZQz79_fw658') no-repeat;
+        background-size: 100% 100%;
+      }
+    </style>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
+    <div id="root">
+      <div class="loader-box">
+        <div>页面初次加载可能较慢，请耐心等待。。。</div>
+      </div>
+    </div>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.

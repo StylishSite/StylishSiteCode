@@ -3,39 +3,39 @@ import React, { useState } from 'react';
 import { Menu } from 'antd';
 import { Link } from 'react-router-dom';
 import { menuConfig } from '../config';
-const { SubMenu } = Menu;
 
 
 
 function Slider() {
 
-  const [ openKeys, setOpenKeys ] = useState(['sub1']);
+  const path = window.location.hash.replace('#','');
 
-  function onOpenChange(val) {
-    if(val.length > 0) {
-      const length =  val.length;
-      const arr = [];
-      arr.push(val[length-1]);
-      setOpenKeys(arr);
-    } else {
-      setOpenKeys([]);
-    }
-  };
+
+  const [ key, setKey ] = useState([path]);
+
+  function handleClick(val) {
+    setKey(val.keyPath)
+  }
 
   return (
-    <Menu mode="inline" openKeys={openKeys} defaultSelectedKeys={['1']} defaultOpenKeys={['sub1']} onOpenChange={onOpenChange} style={{ width: 256, height: '100%' }} >
-      
-      {
-        menuConfig.map(item => (
-          <SubMenu key={item.key} title={item.title}>
-            {
-              item.children.map(k => (
-              <Menu.Item key={k.key}><Link to={k.path}>{k.title}</Link></Menu.Item>
-              ))
-            }
-          </SubMenu>
-        ))
-      }
+    <Menu onClick={handleClick}
+    style={{ width: 256, height: '100%', position: 'fixed', left: 0, top: 64 }}
+    selectedKeys={key}
+    mode="inline"
+  >
+    {
+      menuConfig.map(k => (
+        <Menu.ItemGroup key={k.key} title={k.title}>
+          {
+            k.children.map(v => (
+              <Menu.Item key={v.key}>
+                <Link to={v.key} >{v.title}</Link>
+              </Menu.Item>
+            ))
+          }
+        </Menu.ItemGroup>
+      ))
+    }
     </Menu>
   );
 }

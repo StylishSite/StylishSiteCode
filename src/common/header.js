@@ -1,13 +1,12 @@
 import React from 'react';
 import { Icon } from 'antd';
-import logo from '../asserts/logo.jpeg';
 import './header.css';
 
 function Header() {
   return (
     <div className='header'>
       <div>
-        <img src={logo} alt='暂无图片' style={{ width: '52px', height: '52px', borderRadius: '4px' }}/>
+        <img src='http://img0.imgtn.bdimg.com/it/u=2693684042,1951078886&fm=26&gp=0.jpg' alt='暂无图片' style={{ width: '52px', height: '52px', borderRadius: '4px' }}/>
         <i style={{ color: '#000', fontSize: '16px', marginLeft: '16px' }}>Stylish WebSite</i>
       </div>
       <div>
